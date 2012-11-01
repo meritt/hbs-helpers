@@ -5,7 +5,8 @@ module.exports = (registerHelper, helpers) ->
   pad = (n) ->
     if n < 10 then "0#{n}" else n
 
-  plural = (int, options) ->
+  plural = (int, words) ->
+    options = {words}
     "#{int} #{helpers.helper_plural(int, options)}"
 
   floor = (int) ->
