@@ -1,6 +1,6 @@
 module.exports = (registerHelper, helpers) ->
-  registerHelper 'helper_wrap', (text, options) ->
-    options = if options?.hash? then options.hash else {}
+  registerHelper 'helper_wrap', (text, options = {}) ->
+    options = if options?.hash? then options.hash else options
 
     length = parseInt options.size or 0, 10
     length = 40 if length <= 0

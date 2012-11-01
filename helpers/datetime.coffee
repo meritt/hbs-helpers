@@ -57,8 +57,8 @@ module.exports = (registerHelper, helpers) ->
   ###
   # Helpers
   ###
-  registerHelper 'helper_date', (date, options) ->
-    options = if options?.hash? then options.hash else {}
+  registerHelper 'helper_date', (date, options = {}) ->
+    options = if options?.hash? then options.hash else options
 
     text = to_date date, options.humane is true
 
@@ -67,8 +67,8 @@ module.exports = (registerHelper, helpers) ->
     else
       text
 
-  registerHelper 'helper_datetime', (date, options) ->
-    options = if options?.hash? then options.hash else {}
+  registerHelper 'helper_datetime', (date, options = {}) ->
+    options = if options?.hash? then options.hash else options
 
     text = to_datetime date, options.humane is true
 
@@ -81,8 +81,8 @@ module.exports = (registerHelper, helpers) ->
     today = new Date
     today.getFullYear()
 
-  registerHelper 'helper_plural', (count, options) ->
-    options = if options?.hash? then options.hash else {}
+  registerHelper 'helper_plural', (count, options = {}) ->
+    options = if options?.hash? then options.hash else options
 
     if not options.words or options.words.length isnt 3
       throw new Error 'Количество словоформ должно быть 3'
