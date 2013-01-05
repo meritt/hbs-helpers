@@ -52,7 +52,7 @@ module.exports = (registerHelper, helpers) ->
 
   htmltag = (date, text) ->
     date = to_object date
-    '<time datetime="' + date.toISOString() + '" pubdate>' + text + '</time>'
+    '<time datetime="' + date.toISOString() + '">' + text + '</time>'
 
   ###
   # Helpers
