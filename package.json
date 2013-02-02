@@ -1,6 +1,6 @@
 {
     "name": "express-helpers"
-  , "version": "0.1.5"
+  , "version": "0.2.0"
   , "author": "Alexey Simonenko <alexey@simonenko.su>"
   , "main": "./index"
   , "private": true
@@ -9,6 +9,6 @@
       , "url": "https://meritt@github.com/meritt/express-helpers.git"
     }
   , "engines": {
-      "node": ">=0.6.0 <0.9.0"
+      "node": ">=0.8.0 <0.9.0"
     }
 }
