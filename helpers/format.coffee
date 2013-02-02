@@ -1,4 +1,5 @@
-module.exports = (registerHelper, helpers) ->
+module.exports = (registerHelper) ->
+
   registerHelper 'helper_striptags', (html) ->
     tags     = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi
     comments = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi

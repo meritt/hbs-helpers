@@ -1,8 +1,6 @@
 path = require('path').normalize __dirname
 
-exports.load = (application, hbs) ->
-  {registerHelper, handlebars} = hbs
-
+exports.helpers = (app, engine) ->
   for name in ['datetime', 'format', 'length', 'wrap']
     fn = require "#{path}/helpers/#{name}"
-    fn.call application, registerHelper, handlebars.helpers
+    fn.call app, engine.registerHelper
