@@ -1,14 +1,19 @@
 {
     "name": "express-helpers"
-  , "version": "0.2.0"
+  , "version": "0.3.0"
+  , "description": "Handlebars helpers for Express 3"
+  , "keywords": ["handlebars", "hbs", "express"]
   , "author": "Alexey Simonenko <alexey@simonenko.su>"
-  , "main": "./index"
-  , "private": true
+  , "homepage": "http://simonenko.su/projects/express-helpers"
+  , "main": "./lib/index"
   , "repository": {
         "type": "git"
-      , "url": "https://meritt@github.com/meritt/express-helpers.git"
+      , "url": "https://github.com/meritt/express-helpers.git"
     }
   , "engines": {
       "node": ">=0.8.0 <0.9.0"
+    }
+  , "devDependencies": {
+      "coffee-script": "1.4.x"
     }
 }
