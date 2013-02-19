@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Express Helpers by meritt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Express Helpers</h1>
+        <p class="header">Handlebars helpers for Express 3</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/express-hbs-helpers/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/express-hbs-helpers/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/meritt/express-hbs-helpers">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/meritt">meritt</a></p>
+
+
+      </header>
+      <section>
+        <p>View helpers for <a href="https://github.com/barc/express-hbs">handlebars engine</a>. Work well with Express 3.</p>
+
+<h2>How to use with JavaScript</h2>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">engine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-hbs'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">engine</span><span class="p">(</span><span class="s1">'hbs'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">express3</span><span class="p">);</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'view engine'</span><span class="p">,</span> <span class="s1">'hbs'</span><span class="p">);</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'helpers'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">handlebars</span><span class="p">.</span><span class="nx">helpers</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">helpers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-hbs-helpers'</span><span class="p">).</span><span class="nx">helpers</span><span class="p">;</span>
+<span class="nx">helpers</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">engine</span><span class="p">);</span>
+</pre></div>
+
+<h2>Or with CoffeeScript</h2>
+
+<div class="highlight"><pre><span class="nv">engine = </span><span class="nx">require</span> <span class="s">'express-hbs'</span>
+<span class="nv">express = </span><span class="nx">require</span> <span class="s">'express'</span>
+
+<span class="nv">app = </span><span class="nx">express</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span> <span class="o">-&gt;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">engine</span> <span class="s">'hbs'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">express3</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">'view engine'</span><span class="p">,</span> <span class="s">'hbs'</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">'helpers'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">handlebars</span><span class="p">.</span><span class="nx">helpers</span>
+
+<span class="p">{</span><span class="nx">helpers</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'express-hbs-helpers'</span>
+<span class="nx">helpers</span> <span class="nx">app</span><span class="p">,</span> <span class="nx">engine</span>
+</pre></div>
+
+<hr><h2>Список хелперов:</h2>
+
+<ul>
+<li>helper_date</li>
+<li>helper_datetime</li>
+<li>helper_year</li>
+<li>helper_plural</li>
+<li>helper_striptags</li>
+<li>helper_htmlescape</li>
+<li>helper_urlencode</li>
+<li>helper_money</li>
+<li>helper_length</li>
+<li>helper_wrap</li>
+</ul><p><strong>Options:</strong></p>
+
+<p>helper_date (date, options)</p>
+
+<ul>
+<li>humane <em>boolean</em> default: false</li>
+<li>html <em>boolean</em> default: false</li>
+</ul><p>helper_datetime (date, options)</p>
+
+<ul>
+<li>humane <em>boolean</em> default: false</li>
+<li>html <em>boolean</em> default: false</li>
+</ul><p>helper_plural (count, options)</p>
+
+<ul>
+<li>words <em>array</em>
+</li>
+</ul><p>helper_wrap (text, options)</p>
+
+<ul>
+<li>size <em>number</em> default: 40</li>
+</ul><hr><h2>Author</h2>
+
+<ul>
+<li>
+<a href="mailto:alexey@simonenko.su">Alexey Simonenko</a>, <a href="http://simonenko.su">simonenko.su</a>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37507032-8");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
