@@ -1,5 +1,5 @@
 {
-    "name": "express-helpers"
+    "name": "express-hbs-helpers"
   , "version": "0.3.0"
   , "description": "Handlebars helpers for Express 3"
   , "keywords": ["handlebars", "hbs", "express"]
@@ -8,7 +8,7 @@
   , "main": "./lib/index"
   , "repository": {
         "type": "git"
-      , "url": "https://github.com/meritt/express-helpers.git"
+      , "url": "https://github.com/meritt/express-hbs-helpers.git"
     }
   , "engines": {
       "node": ">=0.8.0 <0.9.0"

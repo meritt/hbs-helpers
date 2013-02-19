@@ -18,7 +18,7 @@ app.configure(function() {
   app.set('helpers', engine.handlebars.helpers);
 });
 
-var helpers = require('express-helpers').helpers;
+var helpers = require('express-hbs-helpers').helpers;
 helpers(app, engine);
 ```
 
@@ -37,7 +37,7 @@ app.configure ->
   app.set 'view engine', 'hbs'
   app.set 'helpers', engine.handlebars.helpers
 
-{helpers} = require 'express-helpers'
+{helpers} = require 'express-hbs-helpers'
 helpers app, engine
 ```
 
