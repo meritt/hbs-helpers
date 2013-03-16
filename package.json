@@ -1,6 +1,6 @@
 {
     "name": "express-hbs-helpers"
-  , "version": "0.3.0"
+  , "version": "0.3.1"
   , "description": "Handlebars helpers for Express 3"
   , "keywords": ["handlebars", "hbs", "express"]
   , "author": "Alexey Simonenko <alexey@simonenko.su>"
