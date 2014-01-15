@@ -13,8 +13,5 @@
   , "engines": {
       "node": ">=0.8.0 <0.11.0"
     }
-  , "devDependencies": {
-      "coffee-script": "1.6.x"
-    }
   , "license": "MIT"
 }
