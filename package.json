@@ -14,7 +14,8 @@
       "node": "~0.10"
     }
   , "dependencies": {
-      "downsize": "0.0.4"
+        "downsize": "0.0.4"
+      , "rubles": "0.1.x"
     }
   , "devDependencies": {
       "jshint": "~2.4"
