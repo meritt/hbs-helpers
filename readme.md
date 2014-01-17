@@ -1,85 +1,47 @@
-# Handlebars helpers for Express 3
+# Helpers
 
-View helpers for [handlebars engine](https://github.com/barc/express-hbs). Work well with Express 3.
+[![NPM version](https://badge.fury.io/js/hbs-helpers.png)](http://badge.fury.io/js/hbs-helpers) [![Dependency Status](https://david-dm.org/meritt/hbs-helpers.png)](https://david-dm.org/meritt/hbs-helpers) [![devDependency Status](https://david-dm.org/meritt/hbs-helpers/dev-status.png)](https://david-dm.org/meritt/hbs-helpers#info=devDependencies)
 
-How to use with JavaScript
---------------------------
+View helpers for any [handlebars](http://handlebarsjs.com) projects. For express 3 I prefer to use [express-hbs](https://github.com/barc/express-hbs) and for koa I prefer to use [koa-hbs](https://github.com/jwilm/koa-hbs). Btw, all helpers can work without handlebars.
 
-```javascript
-var engine = require('express-hbs');
-var express = require('express');
+## Installation
 
-var app = express();
-
-app.configure(function() {
-  app.engine('hbs', engine.express3);
-
-  app.set('view engine', 'hbs');
-  app.set('helpers', engine.handlebars.helpers);
-});
-
-var helpers = require('express-hbs-helpers').helpers;
-helpers(app, engine);
+```bash
+$ npm install hbs-helpers
 ```
 
-Or with CoffeeScript
---------------------
+### Configure for express-hbs
 
-```coffeescript
-engine = require 'express-hbs'
-express = require 'express'
+```js
+var hbs = require('express-hbs');
+var helpers = require('hbs-helpers');
 
-app = express()
-
-app.configure ->
-  app.engine 'hbs', engine.express3
-
-  app.set 'view engine', 'hbs'
-  app.set 'helpers', engine.handlebars.helpers
-
-{helpers} = require 'express-hbs-helpers'
-helpers app, engine
+for (var helper in helpers) {
+  hbs.registerHelper(helper, helpers[helper]);
+}
 ```
 
------------------------------------
+## Helpers
 
-Список хелперов:
-----------------
+* downsize (text[, options])
+* length (number)
+* formatdate (date[, options])
+* rusweek (date[, options])
+* formatyear (date)
+* timeago (date[, options])
+* formatmoney (number)
+* plural (count[, options])
+* rubles (number)
+* htmlescape (text)
+* urlencode (text)
+* striptags (text)
 
-* helper_date
-* helper_datetime
-* helper_year
-* helper_plural
-* helper_striptags
-* helper_htmlescape
-* helper_urlencode
-* helper_money
-* helper_length
-* helper_wrap
-
-**Options:**
-
-helper_date (date, options)
-
- * humane _boolean_ default: false
- * html _boolean_ default: false
-
-helper_datetime (date, options)
-
- * humane _boolean_ default: false
- * html _boolean_ default: false
-
-helper_plural (count, options)
-
- * words _array_
-
-helper_wrap (text, options)
-
- * size _number_ default: 40
-
------------------------------------
-
-Author
-------
+## Author
 
 * [Alexey Simonenko](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
+
+## License
+
+The MIT License, see the included `license.md` file.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/meritt/hbs-helpers/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

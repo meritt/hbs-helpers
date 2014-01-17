@@ -1,8 +1,8 @@
 {
     "name": "hbs-helpers"
-  , "version": "0.3.1"
-  , "description": "Handlebars helpers for Express 3"
-  , "keywords": ["handlebars", "hbs", "express"]
+  , "version": "1.0.0"
+  , "description": "Helpers for any handlebars projects. Btw, it can work without it."
+  , "keywords": ["helpers", "handlebars", "hbs", "express", "express-hbs"]
   , "author": "Alexey Simonenko <alexey@simonenko.su>"
   , "homepage": "http://simonenko.su/projects/helpers"
   , "main": "./lib/index"
