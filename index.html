@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Express Helpers by meritt</title>
+    <title>hbs-helpers by meritt</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -16,13 +16,13 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Express Helpers</h1>
-        <p class="header">Handlebars helpers for Express 3</p>
+        <h1 class="header">hbs-helpers</h1>
+        <p class="header">Handlebars helpers</p>
 
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/meritt/express-hbs-helpers/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/meritt/express-hbs-helpers/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/meritt/express-hbs-helpers">View On GitHub</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/hbs-helpers/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/hbs-helpers/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/meritt/hbs-helpers">View On GitHub</a></li>
         </ul>
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/meritt">meritt</a></p>
@@ -30,87 +30,59 @@
 
       </header>
       <section>
-        <p>View helpers for <a href="https://github.com/barc/express-hbs">handlebars engine</a>. Work well with Express 3.</p>
+        <p><a href="http://badge.fury.io/js/hbs-helpers"><img src="https://badge.fury.io/js/hbs-helpers.png" alt="NPM version"></a> <a href="https://david-dm.org/meritt/hbs-helpers"><img src="https://david-dm.org/meritt/hbs-helpers.png" alt="Dependency Status"></a> <a href="https://david-dm.org/meritt/hbs-helpers#info=devDependencies"><img src="https://david-dm.org/meritt/hbs-helpers/dev-status.png" alt="devDependency Status"></a></p>
 
-<h2>How to use with JavaScript</h2>
+<p>View helpers for any <a href="http://handlebarsjs.com">handlebars</a> projects. For express 3 I prefer to use <a href="https://github.com/barc/express-hbs">express-hbs</a> and for koa I prefer to use <a href="https://github.com/jwilm/koa-hbs">koa-hbs</a>. Btw, all helpers can work without handlebars.</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">engine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-hbs'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">engine</span><span class="p">(</span><span class="s1">'hbs'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">express3</span><span class="p">);</span>
-
-  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'view engine'</span><span class="p">,</span> <span class="s1">'hbs'</span><span class="p">);</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'helpers'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">handlebars</span><span class="p">.</span><span class="nx">helpers</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">helpers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-hbs-helpers'</span><span class="p">).</span><span class="nx">helpers</span><span class="p">;</span>
-<span class="nx">helpers</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span> <span class="nx">engine</span><span class="p">);</span>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>npm install hbs-helpers
 </pre></div>
 
-<h2>Or with CoffeeScript</h2>
+<h3>
+<a name="configure-for-express-hbs" class="anchor" href="#configure-for-express-hbs"><span class="octicon octicon-link"></span></a>Configure for express-hbs</h3>
 
-<div class="highlight"><pre><span class="nv">engine = </span><span class="nx">require</span> <span class="s">'express-hbs'</span>
-<span class="nv">express = </span><span class="nx">require</span> <span class="s">'express'</span>
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">hbs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-hbs'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">helpers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'hbs-helpers'</span><span class="p">);</span>
 
-<span class="nv">app = </span><span class="nx">express</span><span class="p">()</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span> <span class="o">-&gt;</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">engine</span> <span class="s">'hbs'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">express3</span>
-
-  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">'view engine'</span><span class="p">,</span> <span class="s">'hbs'</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">'helpers'</span><span class="p">,</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">handlebars</span><span class="p">.</span><span class="nx">helpers</span>
-
-<span class="p">{</span><span class="nx">helpers</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'express-hbs-helpers'</span>
-<span class="nx">helpers</span> <span class="nx">app</span><span class="p">,</span> <span class="nx">engine</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">helper</span> <span class="k">in</span> <span class="nx">helpers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">hbs</span><span class="p">.</span><span class="nx">registerHelper</span><span class="p">(</span><span class="nx">helper</span><span class="p">,</span> <span class="nx">helpers</span><span class="p">[</span><span class="nx">helper</span><span class="p">]);</span>
+<span class="p">}</span>
 </pre></div>
 
-<hr><h2>Список хелперов:</h2>
+<h2>
+<a name="helpers" class="anchor" href="#helpers"><span class="octicon octicon-link"></span></a>Helpers</h2>
 
 <ul>
-<li>helper_date</li>
-<li>helper_datetime</li>
-<li>helper_year</li>
-<li>helper_plural</li>
-<li>helper_striptags</li>
-<li>helper_htmlescape</li>
-<li>helper_urlencode</li>
-<li>helper_money</li>
-<li>helper_length</li>
-<li>helper_wrap</li>
-</ul><p><strong>Options:</strong></p>
-
-<p>helper_date (date, options)</p>
-
-<ul>
-<li>humane <em>boolean</em> default: false</li>
-<li>html <em>boolean</em> default: false</li>
-</ul><p>helper_datetime (date, options)</p>
-
-<ul>
-<li>humane <em>boolean</em> default: false</li>
-<li>html <em>boolean</em> default: false</li>
-</ul><p>helper_plural (count, options)</p>
-
-<ul>
-<li>words <em>array</em>
-</li>
-</ul><p>helper_wrap (text, options)</p>
-
-<ul>
-<li>size <em>number</em> default: 40</li>
-</ul><hr><h2>Author</h2>
+<li>downsize (text[, options])</li>
+<li>length (number)</li>
+<li>formatdate (date[, options])</li>
+<li>rusweek (date[, options])</li>
+<li>formatyear (date)</li>
+<li>timeago (date[, options])</li>
+<li>formatmoney (number)</li>
+<li>plural (count[, options])</li>
+<li>rubles (number)</li>
+<li>htmlescape (text)</li>
+<li>urlencode (text)</li>
+<li>striptags (text)</li>
+</ul><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
 
 <ul>
 <li>
 <a href="mailto:alexey@simonenko.su">Alexey Simonenko</a>, <a href="http://simonenko.su">simonenko.su</a>
 </li>
-</ul>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License, see the included <code>license.md</code> file.</p>
+
+<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/meritt/hbs-helpers/trend.png" alt="Bitdeli Badge"></a></p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
