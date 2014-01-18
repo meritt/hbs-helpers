@@ -2,7 +2,7 @@
 
 [![NPM version](https://badge.fury.io/js/hbs-helpers.png)](http://badge.fury.io/js/hbs-helpers) [![Dependency Status](https://david-dm.org/meritt/hbs-helpers.png)](https://david-dm.org/meritt/hbs-helpers) [![devDependency Status](https://david-dm.org/meritt/hbs-helpers/dev-status.png)](https://david-dm.org/meritt/hbs-helpers#info=devDependencies)
 
-View helpers for any [handlebars](http://handlebarsjs.com) projects. For express 3 I prefer to use [express-hbs](https://github.com/barc/express-hbs) and for koa I prefer to use [koa-hbs](https://github.com/jwilm/koa-hbs). Btw, all helpers can work without handlebars.
+View helpers for any [handlebars](http://handlebarsjs.com) projects. For express 3 I prefer using [express-hbs](https://github.com/barc/express-hbs) and for koa — [koa-hbs](https://github.com/jwilm/koa-hbs). Btw, all helpers can work without handlebars.
 
 ## Installation
 
