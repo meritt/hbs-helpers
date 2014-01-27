@@ -1,6 +1,6 @@
 {
     "name": "hbs-helpers"
-  , "version": "1.0.0"
+  , "version": "1.0.1"
   , "description": "Helpers for any handlebars projects. Btw, it can work without it."
   , "keywords": ["helpers", "handlebars", "hbs", "express", "express-hbs"]
   , "author": "Alexey Simonenko <alexey@simonenko.su>"
