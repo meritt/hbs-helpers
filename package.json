@@ -11,14 +11,14 @@
       , "url": "https://github.com/meritt/hbs-helpers.git"
     }
   , "engines": {
-      "node": "~0.10"
+      "node": ">=0.10"
     }
   , "dependencies": {
-        "downsize": "0.0.4"
+        "downsize": "0.0.6"
       , "rubles": "0.1.x"
     }
   , "devDependencies": {
-      "jshint": "~2.4"
+      "jshint": "~2.5"
     }
   , "scripts": {
       "jshint": "./node_modules/.bin/jshint lib"
