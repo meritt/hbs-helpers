@@ -1,6 +1,6 @@
 {
   "name": "hbs-helpers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helpers for any handlebars projects. Btw, it can work without it.",
   "keywords": [
     "helpers",
