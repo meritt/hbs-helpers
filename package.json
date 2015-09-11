@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "downsize": "0.0.8",
-    "rubles": "0.1.x"
+    "rubles": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "1.4.1",
