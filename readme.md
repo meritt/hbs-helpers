@@ -7,16 +7,16 @@ View helpers for any [handlebars](http://handlebarsjs.com) projects. For express
 ## Installation
 
 ```bash
-$ npm install hbs-helpers
+$ npm i --save hbs-helpers
 ```
 
 ### Configure for express-hbs
 
 ```js
-var hbs = require('express-hbs');
-var helpers = require('hbs-helpers');
+const hbs = require('express-hbs');
+const helpers = require('hbs-helpers');
 
-for (var helper in helpers) {
+for (let helper in helpers) {
   hbs.registerHelper(helper, helpers[helper]);
 }
 ```
@@ -43,5 +43,3 @@ for (var helper in helpers) {
 ## License
 
 The MIT License, see the included `license.md` file.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/meritt/hbs-helpers/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
