@@ -21,7 +21,7 @@
     "rubles": "^0.2.0"
   },
   "devDependencies": {
-    "eslint": "1.4.1",
+    "eslint": "1.4.3",
     "husky": "^0.10.1"
   },
   "scripts": {
