@@ -21,7 +21,6 @@
     "no-const-assign": 2,
     "no-inner-declarations": [2, "both"],
     "no-useless-call": 2,
-    "no-var": 2,
     "object-curly-spacing": [2, "never"],
     "one-var": [2, "never"],
     "operator-assignment": [2, "never"],
